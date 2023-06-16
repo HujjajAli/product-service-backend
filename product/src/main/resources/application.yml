@@ -1,0 +1,39 @@
+server:
+    port: 8081
+spring:
+    application:
+        name: Product Microservice 
+    datasource:
+        password: admin
+        url: jdbc:postgresql://localhost:5432/product
+        username: postgres
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+    profiles:
+        active: dev
+#logging configs        
+logging:
+ file:
+   name: C:\My Personal\Programming\test\logs\product.log
+   # path:C:\My Personal\Programming\test\logs
+
+#logging configs
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'   
+        
+product:
+  currencies:
+   - PKR
+   - USD
+   - AUD
+   - CNY
